@@ -19,7 +19,6 @@
 				(cl-loop for i from 0 to  (- (length a) 1) vconcat
 					 (vector (elt (elt a i) j))))
 		       row))
-    ;;(list ta col row)
     )
   )
 
@@ -36,17 +35,5 @@
 		 (cl-loop for j from 0 to (- col2 1) vconcat
 			  (vector (nnlisp/dotproduct (elt a i) (elt mat2t j))))))
       (error (format "Dimension mismatch in matrix multiplication.")))))
-
-;; (nnlisp/dotproduct [1 2] [3 4])
-;; (nnlisp/transpose [[1 2] [3 4] [7 8]])
-;;
-
-;; (let (
-;;       (a [[1 2] [3 4]])
-;;       (b [[5 6] [7  8]])
-;;       )
-;;   (nnlisp/matmul a b)
-;;   )
-;; (nnlisp/matmul [[1 2 3] [4 5 6] [9 8 6]]  [[1] [2] [3]])
 
 (provide 'nnlisp)
